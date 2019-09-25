@@ -1,14 +1,18 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+
 class Index extends React.Component {
   render() {
-    const { title, children } = this.props
-
     return (
-      <div>
-        <h1>hello</h1>
-      </div>
+      <Layout>
+        <SEO title="Home" />
+        <div>
+          <h1>hello</h1>
+        </div>
+      </Layout>
     )
   }
 }
