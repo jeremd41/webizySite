@@ -1,25 +1,36 @@
 import React, { Component } from "react"
 import styled from "styled-components"
-import { Link, graphql } from "gatsby"
+import { Link } from "gatsby"
+
+import facebook from "../images/facebook.png"
+import linkedin from "../images/linkedin.png"
+
+import Latest from "./latest"
 
 const Wrapper = styled.div`
    {
     background: #3f3b3a;
-    height: 376px;
+    height: auto;
     width: 100%;
     padding: 10px;
-    border-top: 7px solid #111;
 
     footer {
       display: flex;
       justify-content: space-around;
       margin: 15px;
     }
+
+    .copyright {
+      text-align: left;
+      color: #fff;
+      font-size: 15px;
+    }
   }
 `
 const Plan = styled.section`
    {
     color: #fff;
+    width: 20%;
 
     h5 {
       text-align: center;
@@ -30,10 +41,14 @@ const Plan = styled.section`
 
     ul {
       list-style-type: none;
+      margin: 0;
+      padding: 0;
     }
+
     li {
       width: 100%;
       padding: 10px;
+      text-align: left;
     }
     a:hover {
       color: #bb1d13;
@@ -43,6 +58,12 @@ const Plan = styled.section`
 const Post = styled.section`
    {
     color: #fff;
+    width: 20%;
+    height: 90%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     h5 {
       text-align: center;
@@ -55,6 +76,19 @@ const Post = styled.section`
 const Section = styled.section`
    {
     color: #fff;
+    width: 20%;
+
+    h5 {
+      text-align: center;
+      padding: 3px;
+      border-bottom: 3px solid #bb1d13;
+      font-size: 16px;
+    }
+
+    img {
+      width: 40px;
+      margin: 5px;
+    }
   }
 `
 
@@ -70,57 +104,45 @@ class Footer extends Component {
                 <Link to="/">Acceuil</Link>
               </li>
               <li>
-                <Link to="/">Services</Link>
+                <Link to="presta">Services</Link>
               </li>
               <li>
-                <Link to="/">Conseil</Link>
+                <Link to="conseil">Conseil</Link>
               </li>
               <li>
-                <Link to="/">A propos</Link>
+                <Link to="about">A propos</Link>
               </li>
               <li>
-                <Link to="/">Blog</Link>
+                <Link to="blog">Blog</Link>
               </li>
               <li>
-                <Link to="/">Contact</Link>
+                <Link to="contact">Contact</Link>
               </li>
             </ul>
           </Plan>
           <Post>
-            <h5>Derniers posts</h5>
+            <h5>Derniers article</h5>
+            <Latest />
           </Post>
           <Section>
-            <h5>Reseaux</h5>
+            <h5>Coordonées</h5>
+            <p>Tel: 06 60 72 63 86</p>
+            <p>Webizy-france</p>
+            <p>41700 Contres</p>
+            <a href="https://www.facebook.com/webizyfrance/">
+              <img src={facebook} alt="logo facebook" />
+            </a>
+            <a href="https://www.linkedin.com/in/j%C3%A9r%C3%A9my-diard/">
+              <img src={linkedin} alt="logo linkedin" />
+            </a>
           </Section>
         </footer>
+        <div className="copyright">
+          © {new Date().getFullYear()}, Webizy All rights reserved
+        </div>
       </Wrapper>
     )
   }
 }
 
 export default Footer
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-          }
-        }
-      }
-    }
-  }
-`

@@ -8,6 +8,7 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
+    "bulma": "0.8.0",
     "gatsby": "^2.5.7",
     "gatsby-image": "^2.1.0",
     "gatsby-plugin-google-analytics": "^2.0.20",
@@ -15,7 +16,8 @@
     "gatsby-plugin-netlify-cms": "^4.0.1",
     "gatsby-plugin-offline": "^2.1.1",
     "gatsby-plugin-react-helmet": "^3.0.12",
-    "gatsby-plugin-sharp": "^2.0.37",
+    "gatsby-plugin-sass": "2.1.24",
+    "gatsby-plugin-sharp": "2.3.4",
     "gatsby-plugin-typography": "^2.2.13",
     "gatsby-remark-copy-linked-files": "^2.0.12",
     "gatsby-remark-images": "^3.0.0",
@@ -26,6 +28,7 @@
     "gatsby-transformer-remark": "^2.3.12",
     "gatsby-transformer-sharp": "^2.1.19",
     "netlify-cms": "^2.9.1",
+    "node-sass": "4.13.0",
     "prismjs": "^1.16.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

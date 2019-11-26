@@ -6,6 +6,7 @@ import Iback from "../images/laptop3.jpg"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Serve from "../components/serve"
+import BlogRoll from "../components/blogRoll"
 
 const Parallax = styled.div`
    {
@@ -71,6 +72,12 @@ const Text = styled.span`
   }
 `
 
+const Flex = styled.div`
+   {
+    display: flex;
+  }
+`
+
 class Index extends Component {
   render() {
     return (
@@ -87,6 +94,7 @@ class Index extends Component {
           </Link>
         </Parallax>
         <Serve />
+        <BlogRoll />
       </Layout>
     )
   }

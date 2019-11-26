@@ -14,19 +14,19 @@ class Header extends Component {
         </label>
         <ul className="menu">
           <li>
-            <Link to="/">Services</Link>
+            <Link to="presta">Services</Link>
           </li>
           <li>
-            <Link to="/">Conseil</Link>
+            <Link to="conseil">Conseil</Link>
           </li>
           <li>
-            <Link to="/">A propos</Link>
+            <Link to="about">A propos</Link>
           </li>
           <li>
             <Link to="blog">Blog</Link>
           </li>
           <li>
-            <Link to="/">Contact</Link>
+            <Link to="contact">Contact</Link>
           </li>
         </ul>
       </header>
